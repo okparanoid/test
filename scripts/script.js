@@ -57,6 +57,7 @@ function selectCard(event) {
     event.target.classList.remove('card-is-selected');
     makeCardDefault(item);
   } else if ((event.target.classList.contains('card') || event.target.classList.contains('card__link')) && !event.target.classList.contains('card-is-disabled')) {
+    event.preventDefault();
     const card = item.querySelector('.card');
     card.mouseout = makeCardSelected(item);
     card.mouseover = hoverCard(card);
